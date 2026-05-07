@@ -1,6 +1,7 @@
 export const siteConfig = {
   name: "Dental Theatre",
-  description: "Advanced Dental Care by Dr. Parul Jangra in Panipat. Multi-location dental practice offering premium treatments.",
+  description:
+    "Advanced Dental Care by Dr. Parul Jangra in Panipat. Multi-location dental practice offering premium treatments.",
   links: {
     whatsapp: "https://wa.me/919876543210", // Placeholder
     instagram: "https://instagram.com/dentaltheatre",
@@ -66,6 +67,43 @@ export const siteConfig = {
       description: "Gentle and fun dental care for your little ones.",
       icon: "Baby",
       slug: "pediatric-dentistry",
+    },
+  ],
+  galleryHighlights: [
+    {
+      title: "Consult Lounge",
+      description: "Warm lighting, softer seating, and a more reassuring first conversation.",
+      tag: "Arrival",
+      size: "row-span-2",
+      background: "bg-[linear-gradient(135deg,#0f2f5e_0%,#1c6aa1_48%,#93d8f5_100%)]",
+    },
+    {
+      title: "Smile Design Desk",
+      description: "A high-touch planning corner for treatment mapping and cosmetic previews.",
+      tag: "Planning",
+      size: "col-span-1",
+      background: "bg-[linear-gradient(135deg,#35668f_0%,#7bc0d8_52%,#dff6fb_100%)]",
+    },
+    {
+      title: "Treatment Suite",
+      description: "Clean, modern operatories styled to feel precise, calm, and premium.",
+      tag: "Care",
+      size: "col-span-1",
+      background: "bg-[linear-gradient(160deg,#0b2449_0%,#14578a_58%,#7ccde8_100%)]",
+    },
+    {
+      title: "Sterilization Zone",
+      description: "A subtle trust signal that highlights hygiene standards without feeling clinical.",
+      tag: "Safety",
+      size: "col-span-2",
+      background: "bg-[linear-gradient(140deg,#17335f_0%,#276d9b_44%,#6eb7db_100%)]",
+    },
+    {
+      title: "Before & After Wall",
+      description: "A visual proof point for transformations that feels curated instead of crowded.",
+      tag: "Results",
+      size: "col-span-1",
+      background: "bg-[linear-gradient(140deg,#102748_0%,#215d92_45%,#c6edf8_100%)]",
     },
   ],
 };
