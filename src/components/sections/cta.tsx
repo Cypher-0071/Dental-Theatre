@@ -8,10 +8,10 @@ import { Button } from "@/components/ui/button";
 
 export function CTASection() {
   return (
-    <section className="py-20 lg:py-24">
-      <div className="container mx-auto max-w-7xl px-6 lg:px-10">
+    <section className="py-14 sm:py-20 lg:py-24">
+      <div className="container mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
         <FadeIn direction="up">
-          <div className="relative overflow-hidden rounded-[32px] border border-primary/10 bg-[linear-gradient(135deg,#102f58_0%,#1f5f8e_48%,#5fa9d0_100%)] px-8 py-16 text-primary-foreground shadow-[0_35px_120px_-55px_rgba(8,38,88,0.9)] md:px-16 md:py-20">
+          <div className="relative overflow-hidden rounded-[26px] border border-primary/10 bg-[linear-gradient(135deg,#102f58_0%,#1f5f8e_48%,#5fa9d0_100%)] px-5 py-10 text-primary-foreground shadow-[0_35px_120px_-55px_rgba(8,38,88,0.9)] sm:rounded-[32px] sm:px-8 sm:py-16 md:px-16 md:py-20">
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
               <div className="absolute -top-20 -right-20 h-72 w-72 rounded-full bg-white/8 blur-xl" />
               <div className="absolute -bottom-20 -left-20 h-72 w-72 rounded-full bg-white/6 blur-xl" />
@@ -26,26 +26,26 @@ export function CTASection() {
               </svg>
             </div>
 
-            <div className="relative z-10 flex flex-col items-center justify-between gap-10 lg:flex-row">
+            <div className="relative z-10 flex flex-col items-center justify-between gap-7 sm:gap-10 lg:flex-row">
               <div className="max-w-xl text-center lg:text-left">
                 <p className="mb-4 text-[11px] font-bold tracking-[0.3em] text-white/60 uppercase">
                   Start Today
                 </p>
-                <h2 className="mb-4 font-heading text-4xl leading-none md:text-5xl">
+                <h2 className="mb-4 font-heading text-[2rem] leading-tight sm:text-4xl md:text-5xl md:leading-none">
                   Ready for Your Theatrical Transformation?
                 </h2>
-                <p className="text-[15px] leading-[1.85] text-primary-foreground/74">
+                <p className="text-[14px] leading-[1.75] text-primary-foreground/74 sm:text-[15px] sm:leading-[1.85]">
                   Book your appointment and take the first step toward a healthier, brighter,
                   more confident smile with a clinic experience that already feels elevated.
                 </p>
               </div>
 
-              <div className="flex shrink-0 flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
+              <div className="flex w-full shrink-0 flex-col gap-3 sm:w-auto sm:flex-row lg:flex-col xl:flex-row">
                 <Button
                   nativeButton={false}
                   size="lg"
                   variant="secondary"
-                  className="h-12 rounded-xl bg-white px-8 text-sm font-semibold text-primary shadow-md hover:bg-white/90"
+                  className="h-12 w-full rounded-xl bg-white px-8 text-sm font-semibold text-primary shadow-md hover:bg-white/90 sm:w-auto"
                   render={<Link href={siteConfig.links.whatsapp} target="_blank" />}
                 >
                   <MessageSquare className="mr-2 size-4" />
@@ -55,7 +55,7 @@ export function CTASection() {
                   nativeButton={false}
                   size="lg"
                   variant="outline"
-                  className="h-12 rounded-xl border-white/40 bg-transparent px-8 text-sm font-semibold text-white hover:border-white/70 hover:bg-white/10"
+                  className="h-12 w-full rounded-xl border-white/40 bg-transparent px-8 text-sm font-semibold text-white hover:border-white/70 hover:bg-white/10 sm:w-auto"
                   render={<Link href="/contact" />}
                 >
                   Find Nearest Clinic

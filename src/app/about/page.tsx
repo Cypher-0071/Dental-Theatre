@@ -36,21 +36,21 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col w-full">
       {/* Page Hero */}
-      <section className="py-16 lg:py-20 bg-muted/20 border-b border-border/40">
-        <div className="container mx-auto px-6 lg:px-10 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+      <section className="border-b border-border/40 bg-muted/20 py-12 sm:py-16 lg:py-20">
+        <div className="container mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
+          <div className="grid grid-cols-1 items-center gap-9 sm:gap-14 lg:grid-cols-2">
             {/* Image placeholder */}
             <FadeIn direction="right">
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl shadow-primary/10 ring-1 ring-border/40">
+              <div className="relative mx-auto aspect-[4/5] w-full max-w-[25rem] overflow-hidden rounded-[26px] shadow-2xl shadow-primary/10 ring-1 ring-border/40 lg:max-w-none lg:rounded-2xl">
                 <Image
                   src="/hero_image.jpeg"
                   alt="Dr. Parul Jangra"
                   fill
                   className="object-cover object-top"
                 />
-                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent px-6 py-5">
-                  <p className="text-white font-semibold text-lg">Dr. Parul Jangra</p>
-                  <p className="text-white/65 text-xs mt-0.5 font-light">BDS (M.I.D.A) · Reg. no. 009857</p>
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent px-5 py-5 sm:px-6">
+                  <p className="text-base font-semibold text-white sm:text-lg">Dr. Parul Jangra</p>
+                  <p className="mt-0.5 text-xs font-light text-white/65">BDS (M.I.D.A) · Reg. no. 009857</p>
                 </div>
               </div>
             </FadeIn>
@@ -61,11 +61,11 @@ export default function AboutPage() {
                 <Badge className="w-fit px-3 py-1 text-[11px] tracking-wider uppercase font-semibold mb-1">
                   Founder & Lead Dentist
                 </Badge>
-                <h1 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mt-3">
+                <h1 className="mt-3 text-[2rem] font-bold leading-tight tracking-tight md:text-4xl">
                   Meet Dr. Parul Jangra
                 </h1>
-                <p className="text-base text-muted-foreground leading-relaxed mt-3 italic border-l-2 border-primary/40 pl-4">
-                  "At Dental Theatre, we don't just fix teeth — we perform a symphony of care to ensure every patient leaves with a smile that's ready for the spotlight."
+                <p className="mt-3 border-l-2 border-primary/40 pl-4 text-[15px] leading-relaxed text-muted-foreground italic sm:text-base">
+                  &ldquo;At Dental Theatre, we don&apos;t just fix teeth — we perform a symphony of care to ensure every patient leaves with a smile that&apos;s ready for the spotlight.&rdquo;
                 </p>
                 <div className="h-px w-14 bg-primary/50 rounded-full mt-5 mb-5" />
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -81,14 +81,14 @@ export default function AboutPage() {
       </section>
 
       {/* Credentials */}
-      <section className="py-16 lg:py-20">
-        <div className="container mx-auto px-6 lg:px-10 max-w-7xl">
-          <div className="text-center mb-12">
+      <section className="py-12 sm:py-16 lg:py-20">
+        <div className="container mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
+          <div className="mb-9 text-center sm:mb-12">
             <FadeIn direction="up">
               <p className="text-[11px] font-semibold tracking-widest uppercase text-primary mb-3">
                 Credentials
               </p>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+              <h2 className="text-[1.75rem] font-bold tracking-tight md:text-3xl">
                 Qualifications & Achievements
               </h2>
             </FadeIn>
@@ -96,12 +96,12 @@ export default function AboutPage() {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {credentials.map((cred, i) => (
               <FadeIn key={i} direction="up" delay={i * 0.1}>
-                <Card className="text-center border border-border/60 shadow-sm hover:shadow-md hover:border-primary/20 transition-all rounded-xl">
-                  <CardContent className="pt-8 pb-8">
+                <Card className="rounded-xl border border-border/60 text-center shadow-sm transition-all hover:border-primary/20 hover:shadow-md">
+                  <CardContent className="px-5 pt-7 pb-7 sm:pt-8 sm:pb-8">
                     <div className="size-12 rounded-xl bg-primary/8 border border-primary/10 flex items-center justify-center mx-auto mb-4 text-primary">
                       <cred.icon className="size-5" />
                     </div>
-                    <h3 className="text-xl font-bold tracking-tight">{cred.title}</h3>
+                    <h3 className="text-lg font-bold tracking-tight sm:text-xl">{cred.title}</h3>
                     <p className="text-xs text-muted-foreground mt-1.5">{cred.description}</p>
                   </CardContent>
                 </Card>
@@ -112,27 +112,27 @@ export default function AboutPage() {
       </section>
 
       {/* Highlights */}
-      <section className="py-16 lg:py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-6 lg:px-10 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+      <section className="bg-primary py-12 text-primary-foreground sm:py-16 lg:py-20">
+        <div className="container mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
+          <div className="grid grid-cols-1 items-center gap-9 sm:gap-14 lg:grid-cols-2">
             <FadeIn direction="right">
               <p className="text-[11px] font-semibold tracking-widest uppercase text-white/50 mb-4">
                 Why Choose Us
               </p>
-              <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-8 leading-tight">
+              <h2 className="mb-7 text-[1.85rem] font-bold leading-tight tracking-tight md:mb-8 md:text-4xl">
                 Why Choose Dr. Parul?
               </h2>
               <div className="flex flex-col gap-4">
                 {highlights.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle2 className="size-5 text-white/70 shrink-0 mt-0.5" />
-                    <span className="text-[15px] opacity-85 leading-snug">{item}</span>
+                    <span className="text-sm leading-snug opacity-85 sm:text-[15px]">{item}</span>
                   </div>
                 ))}
               </div>
             </FadeIn>
             <FadeIn direction="left">
-              <div className="aspect-video rounded-2xl bg-white/8 backdrop-blur-sm border border-white/15 flex items-center justify-center">
+              <div className="flex aspect-video items-center justify-center rounded-2xl border border-white/15 bg-white/8 backdrop-blur-sm">
                 <span className="text-white/30 text-sm italic tracking-wide">
                   Clinic Interior · Coming Soon
                 </span>

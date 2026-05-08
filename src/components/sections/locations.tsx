@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Phone, Clock, Calendar, User, MessageSquare, ArrowRight, ExternalLink } from "lucide-react";
+import { MapPin, Phone, Clock, User, MessageSquare, ExternalLink } from "lucide-react";
 import { siteConfig } from "@/lib/data/site-data";
 import { FadeIn } from "@/components/ui-custom/animations";
 import { Button } from "@/components/ui/button";
@@ -45,32 +45,32 @@ export function LocationsSection({ id }: { id?: string }) {
   const activeLocation = extendedLocations[activeIndex];
 
   return (
-    <section id={id} className="relative overflow-hidden py-16 lg:py-24 bg-white">
-      <div className="container mx-auto max-w-7xl px-6 lg:px-10">
+    <section id={id} className="relative overflow-hidden bg-white py-12 sm:py-16 lg:py-24">
+      <div className="container mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
         
-        <FadeIn direction="up" className="mb-10 text-center lg:text-left">
+        <FadeIn direction="up" className="mb-8 text-center sm:mb-10 lg:text-left">
           <p className="mb-3 text-[11px] font-bold tracking-[0.3em] text-primary uppercase">
             Our Clinics
           </p>
-          <h2 className="font-heading text-4xl leading-none md:text-5xl">
+          <h2 className="font-heading text-[2rem] leading-tight sm:text-4xl md:text-5xl md:leading-none">
             Find Us Near You
           </h2>
         </FadeIn>
 
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid grid-cols-1 items-start gap-9 sm:gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
           
           {/* Left Side: Info & Controls */}
           <div className="flex flex-col">
             
             {/* Location Switcher */}
             <FadeIn direction="up" delay={0.1}>
-              <div className="flex flex-wrap gap-2 mb-8 bg-slate-100/50 p-1.5 rounded-2xl border border-border/50 w-fit">
+              <div className="-mx-5 mb-7 flex gap-2 overflow-x-auto px-5 pb-2 sm:mx-0 sm:mb-8 sm:w-fit sm:flex-wrap sm:overflow-visible sm:rounded-2xl sm:border sm:border-border/50 sm:bg-slate-100/50 sm:p-1.5">
                 {extendedLocations.map((loc, idx) => (
                   <button
                     key={loc.shortName}
                     onClick={() => setActiveIndex(idx)}
                     className={cn(
-                      "px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300",
+                      "shrink-0 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-300 sm:px-5",
                       activeIndex === idx
                         ? "bg-white text-primary shadow-sm ring-1 ring-border/50"
                         : "text-muted-foreground hover:text-foreground hover:bg-slate-100"
@@ -82,7 +82,7 @@ export function LocationsSection({ id }: { id?: string }) {
               </div>
             </FadeIn>
 
-            <div className="min-h-[380px]">
+            <div className="min-h-0 lg:min-h-[380px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeIndex}
@@ -90,38 +90,38 @@ export function LocationsSection({ id }: { id?: string }) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.3 }}
-                  className="flex flex-col gap-8"
+                  className="flex flex-col gap-6 sm:gap-8"
                 >
                   
                   {/* Location Info */}
                   <div className="space-y-4">
-                    <h3 className="text-2xl font-bold">{activeLocation.name}</h3>
+                    <h3 className="text-[1.45rem] font-bold leading-tight sm:text-2xl">{activeLocation.name}</h3>
                     
                     <div className="space-y-3 text-muted-foreground">
                       <div className="flex items-start gap-3">
                         <MapPin className="size-5 shrink-0 text-primary mt-0.5" />
-                        <p className="text-[15px] leading-relaxed">{activeLocation.address}</p>
+                        <p className="text-[14px] leading-relaxed sm:text-[15px]">{activeLocation.address}</p>
                       </div>
                       <div className="flex items-center gap-3">
                         <Phone className="size-5 shrink-0 text-primary" />
-                        <p className="text-[15px]">{activeLocation.phone}</p>
+                        <p className="text-[14px] sm:text-[15px]">{activeLocation.phone}</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <Clock className="size-5 shrink-0 text-primary mt-0.5" />
-                        <p className="text-[15px] leading-relaxed">{activeLocation.hours}</p>
+                        <p className="text-[14px] leading-relaxed sm:text-[15px]">{activeLocation.hours}</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Doctor Profile */}
-                  <div className="rounded-[24px] border border-primary/10 bg-slate-50/80 p-6 shadow-sm">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="flex size-14 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                        <User className="size-6" />
+                  <div className="rounded-[22px] border border-primary/10 bg-slate-50/80 p-5 shadow-sm sm:rounded-[24px] sm:p-6">
+                    <div className="mb-4 flex items-center gap-3 sm:gap-4">
+                      <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary sm:size-14">
+                        <User className="size-5 sm:size-6" />
                       </div>
                       <div>
-                        <p className="text-lg font-bold text-foreground">{activeLocation.doctor}</p>
-                        <p className="text-sm font-medium text-primary">{activeLocation.doctorRole}</p>
+                        <p className="text-base font-bold text-foreground sm:text-lg">{activeLocation.doctor}</p>
+                        <p className="text-xs font-medium text-primary sm:text-sm">{activeLocation.doctorRole}</p>
                         {"regNo" in activeLocation && (
                           <p className="mt-0.5 text-[10px] text-muted-foreground uppercase tracking-wider">
                             Reg. no. {activeLocation.regNo}
@@ -143,11 +143,11 @@ export function LocationsSection({ id }: { id?: string }) {
                   </div>
 
                   {/* CTA */}
-                  <div className="flex flex-wrap gap-3">
+                  <div className="grid gap-3 sm:flex sm:flex-wrap">
                     <Button
                       nativeButton={false}
                       size="lg"
-                      className="h-12 rounded-xl px-8 shadow-md shadow-primary/20"
+                      className="h-12 w-full rounded-xl px-8 shadow-md shadow-primary/20 sm:w-auto"
                       render={<Link href={siteConfig.links.whatsapp} target="_blank" />}
                     >
                       <MessageSquare className="mr-2 size-4" />
@@ -157,7 +157,7 @@ export function LocationsSection({ id }: { id?: string }) {
                       nativeButton={false}
                       size="lg"
                       variant="outline"
-                      className="h-12 rounded-xl px-6 bg-white hover:bg-slate-50"
+                      className="h-12 w-full rounded-xl bg-white px-6 hover:bg-slate-50 sm:w-auto"
                       render={<Link href={activeLocation.mapUrl} target="_blank" />}
                     >
                       Get Directions
@@ -172,7 +172,7 @@ export function LocationsSection({ id }: { id?: string }) {
 
           {/* Right Side: Image & Map Overlay */}
           <FadeIn direction="left" delay={0.2} className="h-full">
-            <div className="relative h-[500px] w-full rounded-[32px] overflow-hidden shadow-2xl shadow-primary/10 ring-1 ring-border/50">
+            <div className="relative h-[360px] w-full overflow-hidden rounded-[26px] shadow-2xl shadow-primary/10 ring-1 ring-border/50 sm:h-[430px] sm:rounded-[32px] lg:h-[500px]">
               
               {/* Abstract/Placeholder Image */}
               <AnimatePresence mode="wait">
@@ -193,7 +193,7 @@ export function LocationsSection({ id }: { id?: string }) {
 
               {/* Interactive Map Widget Overlay */}
               <motion.div 
-                className="absolute bottom-6 right-6 w-[35%] h-[30%] min-w-[200px] min-h-[160px] rounded-2xl overflow-hidden shadow-2xl ring-4 ring-white/20 bg-white"
+                className="absolute right-4 bottom-4 left-4 h-[38%] overflow-hidden rounded-2xl bg-white shadow-2xl ring-4 ring-white/20 sm:left-auto sm:right-6 sm:bottom-6 sm:h-[30%] sm:min-h-[160px] sm:w-[35%] sm:min-w-[200px]"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4, type: "spring", stiffness: 200, damping: 20 }}

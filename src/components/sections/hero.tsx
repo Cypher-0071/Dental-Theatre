@@ -7,7 +7,6 @@ import {
   PhoneCall,
   ShieldCheck,
   Star,
-  Users,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -18,7 +17,7 @@ import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-10 pb-16 lg:pt-16 lg:pb-24">
+    <section className="relative overflow-hidden pt-8 pb-14 sm:pt-10 sm:pb-16 lg:pt-16 lg:pb-24">
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div className="absolute inset-x-0 top-0 h-[520px] bg-[linear-gradient(180deg,rgba(14,46,91,0.08),transparent)]" />
         <div className="absolute -top-32 right-[-7rem] h-[600px] w-[600px] rounded-full bg-primary/12 blur-[120px]" />
@@ -26,20 +25,20 @@ export function Hero() {
         <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(19,74,123,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(19,74,123,0.04)_1px,transparent_1px)] [background-size:72px_72px]" />
       </div>
 
-      <div className="container mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-          <div className="flex flex-col gap-6">
+      <div className="container mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
+        <div className="grid grid-cols-1 items-center gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="flex flex-col gap-5 sm:gap-6">
             <FadeIn direction="up">
-              <div className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-primary/8 px-3.5 py-1.5 text-[11px] font-bold tracking-[0.28em] text-primary w-fit uppercase">
+              <div className="inline-flex w-fit max-w-full items-center gap-2 rounded-full border border-primary/15 bg-primary/8 px-3.5 py-1.5 text-[10px] font-bold tracking-[0.2em] text-primary uppercase sm:text-[11px] sm:tracking-[0.28em]">
                 <ShieldCheck className="size-3" />
-                <span>Most Trusted Dental Clinic in Panipat</span>
+                <span className="truncate">Most Trusted Dental Clinic in Panipat</span>
               </div>
-              <h1 className="mt-5 text-4xl md:text-[2.75rem] lg:text-5xl font-extrabold tracking-tight leading-[1.08] text-foreground">
+              <h1 className="mt-4 text-[2.6rem] font-extrabold leading-[1.04] tracking-tight text-foreground sm:mt-5 sm:text-4xl md:text-[2.75rem] lg:text-5xl lg:leading-[1.08]">
                 Where Science Meets<br className="hidden md:block" /> the{" "}
                 <span className="text-primary underline decoration-primary/35 decoration-wavy underline-offset-4">
                   Art of Smiles.
                 </span>
-                </h1>
+              </h1>
             </FadeIn>
 
             <FadeIn direction="up" delay={0.1}>
@@ -55,8 +54,40 @@ export function Hero() {
               </div>
             </FadeIn>
 
+            <FadeIn direction="up" delay={0.14} className="lg:hidden">
+              <div className="relative mx-auto w-full max-w-[26rem] overflow-visible px-1 pb-5 pt-2">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] bg-muted/20 shadow-2xl shadow-primary/10 ring-1 ring-border/50">
+                  <Image
+                    src="/hero_image.jpeg"
+                    alt="Dr. Parul Jangra"
+                    fill
+                    className="object-cover object-top"
+                    priority
+                    sizes="100vw"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent px-5 py-6">
+                    <p className="text-base font-semibold leading-tight text-white">Dr. Parul Jangra</p>
+                    <p className="mt-1 text-[11px] font-medium text-white/78">BDS (M.I.D.A) · Oral & Dental Surgeon</p>
+                    <p className="mt-0.5 text-[10px] font-medium tracking-wider text-white/58">Reg. no. 009857</p>
+                  </div>
+                </div>
+
+                <div className="absolute right-0 top-0 rounded-[20px] border border-white/70 bg-white/92 px-3 py-2 shadow-xl">
+                  <div className="flex items-center gap-2">
+                    <div className="rounded-xl bg-amber-50 p-1.5">
+                      <Star className="size-3.5 fill-yellow-500 text-yellow-500" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold leading-none">4.9 / 5.0</p>
+                      <p className="mt-1 text-[10px] text-muted-foreground">Google Reviews</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
             <FadeIn direction="up" delay={0.18}>
-              <p className="max-w-[560px] text-[15px] leading-[1.85] text-muted-foreground md:text-base">
+              <p className="max-w-[560px] text-[15px] leading-[1.75] text-muted-foreground md:text-base md:leading-[1.85]">
                 Dental Theatre combines advanced clinical care with a calmer, more polished
                 patient experience, so every consultation, treatment plan, and smile makeover
                 feels precise, personal, and confidence-building.
@@ -65,7 +96,7 @@ export function Hero() {
 
             <FadeIn direction="up" delay={0.28}>
               <div className="grid gap-3 sm:grid-cols-[1.1fr_0.9fr]">
-                <div className="rounded-[28px] border border-white/70 bg-white/78 p-5 shadow-[0_20px_60px_-40px_rgba(7,33,77,0.55)] backdrop-blur-md">
+                <div className="rounded-[24px] border border-white/70 bg-white/78 p-4 shadow-[0_20px_60px_-40px_rgba(7,33,77,0.55)] backdrop-blur-md sm:rounded-[28px] sm:p-5">
                   <p className="text-[11px] font-bold tracking-[0.28em] text-primary/80 uppercase">
                     Patient Promise
                   </p>
@@ -74,7 +105,7 @@ export function Hero() {
                     that feels premium without becoming intimidating.
                   </p>
                 </div>
-                <div className="rounded-[28px] border border-primary/10 bg-[linear-gradient(160deg,rgba(17,53,98,0.96),rgba(40,111,158,0.92))] p-5 text-primary-foreground shadow-[0_22px_70px_-38px_rgba(13,48,101,0.8)]">
+                <div className="rounded-[24px] border border-primary/10 bg-[linear-gradient(160deg,rgba(17,53,98,0.96),rgba(40,111,158,0.92))] p-4 text-primary-foreground shadow-[0_22px_70px_-38px_rgba(13,48,101,0.8)] sm:rounded-[28px] sm:p-5">
                   <p className="text-[11px] font-bold tracking-[0.28em] text-white/60 uppercase">
                     Reputation
                   </p>
@@ -91,7 +122,7 @@ export function Hero() {
                 <Button
                   nativeButton={false}
                   size="lg"
-                  className="h-12 rounded-xl px-7 text-sm font-semibold shadow-md shadow-primary/20"
+                  className="h-12 w-full rounded-xl px-7 text-sm font-semibold shadow-md shadow-primary/20 sm:w-auto"
                   render={<Link href={siteConfig.links.whatsapp} target="_blank" />}
                 >
                   <MessageSquare className="mr-2 size-4" />
@@ -101,7 +132,7 @@ export function Hero() {
                   nativeButton={false}
                   size="lg"
                   variant="outline"
-                  className="h-12 rounded-xl border-border/70 bg-white/65 px-7 text-sm backdrop-blur-sm hover:bg-white"
+                  className="h-12 w-full rounded-xl border-border/70 bg-white/65 px-7 text-sm backdrop-blur-sm hover:bg-white sm:w-auto"
                   render={<Link href="/services" />}
                 >
                   Explore Services
@@ -111,26 +142,26 @@ export function Hero() {
             </FadeIn>
 
             <FadeIn direction="up" delay={0.45}>
-              <div className="mt-2 flex items-start gap-6 border-t border-border/50 pt-6">
+              <div className="mt-2 grid grid-cols-3 gap-3 border-t border-border/50 pt-5 sm:flex sm:items-start sm:gap-6 sm:pt-6">
                 <div>
-                  <p className="text-2xl font-bold tracking-tight">
+                  <p className="text-[1.55rem] font-bold tracking-tight sm:text-2xl">
                     <Counter value={10} suffix="k+" />
                   </p>
-                  <p className="mt-0.5 text-xs font-medium text-muted-foreground">Happy Patients</p>
+                  <p className="mt-1 text-[11px] font-medium leading-tight text-muted-foreground sm:mt-0.5 sm:text-xs">Happy Patients</p>
                 </div>
-                <div className="h-10 w-px self-center bg-border" />
-                <div>
-                  <p className="text-2xl font-bold tracking-tight">
+                <div className="hidden h-10 w-px self-center bg-border sm:block" />
+                <div className="border-l border-border pl-3 sm:border-l-0 sm:pl-0">
+                  <p className="text-[1.55rem] font-bold tracking-tight sm:text-2xl">
                     <Counter value={12} suffix="+" />
                   </p>
-                  <p className="mt-0.5 text-xs font-medium text-muted-foreground">Years Experience</p>
+                  <p className="mt-1 text-[11px] font-medium leading-tight text-muted-foreground sm:mt-0.5 sm:text-xs">Years Experience</p>
                 </div>
-                <div className="h-10 w-px self-center bg-border" />
-                <div>
-                  <p className="text-2xl font-bold tracking-tight">
+                <div className="hidden h-10 w-px self-center bg-border sm:block" />
+                <div className="border-l border-border pl-3 sm:border-l-0 sm:pl-0">
+                  <p className="text-[1.55rem] font-bold tracking-tight sm:text-2xl">
                     <Counter value={3} />
                   </p>
-                  <p className="mt-0.5 text-xs font-medium text-muted-foreground">Clinic Locations</p>
+                  <p className="mt-1 text-[11px] font-medium leading-tight text-muted-foreground sm:mt-0.5 sm:text-xs">Clinic Locations</p>
                 </div>
               </div>
             </FadeIn>

@@ -14,16 +14,16 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
-import { Menu, Phone, MessageSquare } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetHeader, SheetFooter } from "@/components/ui/sheet";
+import { Menu, Phone, MessageSquare, Home, Info, Stethoscope, Image, Mail, Instagram, Facebook } from "lucide-react";
 import { siteConfig } from "@/lib/data/site-data";
 
 const navItems = [
-  { title: "Home", href: "/" },
-  { title: "About", href: "/about" },
-  { title: "Services", href: "/services" },
-  { title: "Gallery", href: "/gallery" },
-  { title: "Contact", href: "/#locations" },
+  { title: "Home", href: "/", icon: Home },
+  { title: "About", href: "/about", icon: Info },
+  { title: "Services", href: "/services", icon: Stethoscope },
+  { title: "Gallery", href: "/gallery", icon: Image },
+  { title: "Contact", href: "/#locations", icon: Phone },
 ];
 
 export function Header() {
@@ -79,26 +79,76 @@ export function Header() {
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             } />
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <SheetTitle className="text-left">Navigation</SheetTitle>
-              <nav className="flex flex-col gap-4 mt-8">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.title}
-                    href={item.href}
+            <SheetContent side="right" className="w-[300px] sm:w-[350px] p-0 flex flex-col">
+              <SheetHeader className="p-6 border-b border-border/40">
+                <SheetTitle className="text-left flex items-center gap-2">
+                  <span className="text-xl font-bold tracking-tight text-primary">
+                    Dental <span className="text-foreground/80">Theatre</span>
+                  </span>
+                </SheetTitle>
+              </SheetHeader>
+              
+              <div className="flex-1 overflow-y-auto py-6 px-4">
+                <nav className="flex flex-col gap-2">
+                  {navItems.map((item) => {
+                    const Icon = item.icon;
+                    const isActive = pathname === item.href;
+                    
+                    return (
+                      <Link
+                        key={item.title}
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className={cn(
+                          "flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium transition-all",
+                          isActive 
+                            ? "bg-primary/10 text-primary" 
+                            : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                        )}
+                      >
+                        <Icon className={cn("size-5", isActive ? "text-primary" : "text-muted-foreground/70")} />
+                        {item.title}
+                      </Link>
+                    );
+                  })}
+                </nav>
+                
+                <div className="mt-8 px-4">
+                  <Button 
+                    nativeButton={false} 
+                    className="w-full h-11 text-base font-semibold shadow-sm" 
+                    render={<Link href={siteConfig.links.whatsapp} target="_blank" />} 
                     onClick={() => setIsOpen(false)}
-                    className={cn(
-                      "text-lg font-medium transition-colors hover:text-primary",
-                      pathname === item.href ? "text-primary" : "text-muted-foreground"
-                    )}
                   >
-                    {item.title}
-                  </Link>
-                ))}
-                <Button nativeButton={false} className="mt-4" render={<Link href={siteConfig.links.whatsapp} target="_blank" />} onClick={() => setIsOpen(false)}>
-                  Book Appointment
-                </Button>
-              </nav>
+                    Book Appointment
+                  </Button>
+                </div>
+              </div>
+
+              <SheetFooter className="p-6 border-t border-border/40 bg-muted/20">
+                <div className="flex flex-col gap-4 w-full">
+                  <div className="flex flex-col gap-2">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground/60">Contact Info</p>
+                    <a href={`tel:${siteConfig.locations[0].phone}`} className="flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors">
+                      <Phone className="size-4 text-primary/70" />
+                      {siteConfig.locations[0].phone}
+                    </a>
+                    <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2 text-sm text-foreground/80 hover:text-primary transition-colors">
+                      <Mail className="size-4 text-primary/70" />
+                      {siteConfig.email}
+                    </a>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 mt-2">
+                    <Link href={siteConfig.links.instagram} target="_blank" className="p-2 rounded-full bg-background border border-border/60 text-muted-foreground hover:text-primary hover:border-primary/40 transition-all">
+                      <Instagram className="size-4" />
+                    </Link>
+                    <Link href={siteConfig.links.facebook} target="_blank" className="p-2 rounded-full bg-background border border-border/60 text-muted-foreground hover:text-primary hover:border-primary/40 transition-all">
+                      <Facebook className="size-4" />
+                    </Link>
+                  </div>
+                </div>
+              </SheetFooter>
             </SheetContent>
           </Sheet>
         </div>

@@ -26,16 +26,16 @@ export default function GalleryPage() {
       : galleryImages.filter((img) => img.category === activeCategory);
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex w-full flex-col">
       {/* Page hero */}
-      <section className="py-14 lg:py-16 bg-muted/20 border-b border-border/40">
-        <div className="container mx-auto px-6 lg:px-10 max-w-7xl text-center">
+      <section className="border-b border-border/40 bg-muted/20 py-12 sm:py-14 lg:py-16">
+        <div className="container mx-auto max-w-7xl px-5 text-center sm:px-6 lg:px-10">
           <FadeIn direction="up">
             <p className="text-[11px] font-semibold tracking-widest uppercase text-primary mb-3">
               Inside Dental Theatre
             </p>
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Smile Gallery</h1>
-            <p className="text-[15px] text-muted-foreground max-w-xl mx-auto leading-relaxed">
+            <h1 className="mb-4 text-[2rem] font-bold tracking-tight md:text-5xl">Smile Gallery</h1>
+            <p className="mx-auto max-w-xl text-[14px] leading-relaxed text-muted-foreground sm:text-[15px]">
               A glimpse into our world of precision and care. Explore our facilities, procedures, and transformations.
             </p>
           </FadeIn>
@@ -43,16 +43,16 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery */}
-      <section className="py-16 lg:py-20">
-        <div className="container mx-auto px-6 lg:px-10 max-w-7xl">
+      <section className="py-12 sm:py-16 lg:py-20">
+        <div className="container mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
           {/* Category filters */}
           <FadeIn direction="up" delay={0.1}>
-            <div className="flex flex-wrap justify-center gap-2 mb-10">
+            <div className="-mx-5 mb-8 flex gap-2 overflow-x-auto px-5 pb-2 sm:mx-0 sm:mb-10 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0 sm:pb-0">
               {categories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wide transition-all ${
+                  className={`shrink-0 rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all ${
                     activeCategory === category
                       ? "bg-primary text-primary-foreground shadow-sm"
                       : "bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground border border-border/50"
@@ -64,14 +64,14 @@ export default function GalleryPage() {
             </div>
           </FadeIn>
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <StaggerContainer className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
             {filteredImages.map((image, i) => (
               <FadeIn key={image.id} direction="up" delay={i * 0.06}>
                 <Dialog>
                   <DialogTrigger
                     nativeButton={false}
                     render={
-                      <div className="group relative overflow-hidden rounded-xl cursor-pointer bg-muted/30 border border-border/50 shadow-sm hover:shadow-lg hover:border-primary/20 aspect-square transition-all duration-300">
+                      <div className="group relative aspect-square cursor-pointer overflow-hidden rounded-[20px] border border-border/50 bg-muted/30 shadow-sm transition-all duration-300 hover:border-primary/20 hover:shadow-lg sm:rounded-xl">
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/15 to-transparent opacity-60" />
                         <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/30 font-semibold uppercase tracking-widest text-xs text-center p-4">
                           {image.placeholder}
@@ -102,14 +102,14 @@ export default function GalleryPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-14 border-t border-border/40 bg-muted/10">
-        <div className="container mx-auto px-6 lg:px-10 max-w-7xl">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+      <section className="border-t border-border/40 bg-muted/10 py-12 sm:py-14">
+        <div className="container mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
+          <div className="flex flex-col items-center justify-between gap-6 lg:flex-row lg:gap-8">
             <FadeIn direction="right" className="text-center lg:text-left">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-3">
+              <h2 className="mb-3 text-[1.65rem] font-bold tracking-tight md:text-3xl">
                 See the Theatre in Action
               </h2>
-              <p className="text-[15px] text-muted-foreground max-w-md leading-relaxed">
+              <p className="max-w-md text-[14px] leading-relaxed text-muted-foreground sm:text-[15px]">
                 Follow us on Instagram for daily updates, patient transformations, and a peek behind the scenes.
               </p>
             </FadeIn>
@@ -118,7 +118,7 @@ export default function GalleryPage() {
                 nativeButton={false}
                 size="lg"
                 variant="outline"
-                className="h-11 px-8 text-sm font-semibold rounded-xl hover:border-primary/50"
+                className="h-11 w-full rounded-xl px-8 text-sm font-semibold hover:border-primary/50 sm:w-auto"
                 render={<a href="https://instagram.com/dentaltheatre" target="_blank" />}
               >
                 Follow @dentaltheatre
