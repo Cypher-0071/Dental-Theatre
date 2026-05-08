@@ -3,7 +3,7 @@
 import { FadeIn } from "@/components/ui-custom/animations";
 import { siteConfig } from "@/lib/data/site-data";
 import { cn } from "@/lib/utils";
-import { ArrowRight, MoveUpRight } from "lucide-react";
+import { ArrowRight, MoveUpRight, Image as ImageIcon } from "lucide-react";
 import Link from "next/link";
 
 export function PhotoGridSection() {
@@ -68,6 +68,8 @@ export function PhotoGridSection() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.24),transparent_34%),linear-gradient(180deg,rgba(8,22,49,0.04),rgba(6,18,39,0.72))]" />
               <div className="absolute inset-0 opacity-30 mix-blend-screen [background-image:linear-gradient(rgba(255,255,255,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:24px_24px]" />
 
+              <ImageIcon className="absolute inset-0 m-auto size-10 text-white/30" />
+
               <div className="relative flex h-full flex-col justify-between">
                 <div className="flex items-start justify-between gap-4">
                   <span className="rounded-full border border-white/20 bg-white/10 px-2.5 py-1 text-[9px] font-bold tracking-[0.22em] uppercase text-white/90 backdrop-blur-sm sm:px-3 sm:text-[10px] sm:tracking-[0.28em]">
@@ -78,9 +80,6 @@ export function PhotoGridSection() {
 
                 <div>
                   <p className="text-base font-bold leading-tight sm:text-xl md:text-2xl">{item.title}</p>
-                  <p className="mt-1.5 line-clamp-2 max-w-sm text-xs leading-[1.65] text-white/78 sm:mt-2 sm:text-sm sm:leading-[1.75]">
-                    {item.description}
-                  </p>
                 </div>
               </div>
             </FadeIn>

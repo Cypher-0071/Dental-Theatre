@@ -27,7 +27,7 @@ export function Hero() {
 
       <div className="container mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
         <div className="grid grid-cols-1 items-center gap-10 sm:gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="flex flex-col gap-5 sm:gap-6">
+          <div className="flex flex-col gap-5 lg:-mt-30 sm:gap-6">
             <FadeIn direction="up">
               <div className="inline-flex w-fit max-w-full items-center gap-2 rounded-full border border-primary/15 bg-primary/8 px-3.5 py-1.5 text-[10px] font-bold tracking-[0.2em] text-primary uppercase sm:text-[11px] sm:tracking-[0.28em]">
                 <ShieldCheck className="size-3" />

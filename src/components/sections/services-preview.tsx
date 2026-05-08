@@ -88,7 +88,7 @@ export function ServicesPreview() {
   const secondRow = siteConfig.services.slice(Math.ceil(siteConfig.services.length / 2));
 
   return (
-    <section className="relative overflow-hidden py-14 sm:py-20 lg:py-32">
+    <section className="relative overflow-hidden py-1 sm:py-2 lg:py-3">
       {/* Premium Background Elements */}
       <div className="absolute inset-0 -z-10 bg-[#f8fbff]" />
       <div className="absolute -top-[20%] left-[-10%] -z-10 h-[600px] w-[600px] rounded-full bg-[radial-gradient(circle_at_center,rgba(56,152,212,0.08)_0%,transparent_70%)] blur-[80px]" />
@@ -141,13 +141,11 @@ export function ServicesPreview() {
           <Button
             nativeButton={false}
             size="lg"
-            className="group h-12 w-full rounded-2xl bg-white px-6 text-sm font-semibold text-foreground shadow-[0_8px_25px_rgb(0,0,0,0.06)] ring-1 ring-border/50 hover:bg-slate-50 hover:shadow-[0_12px_30px_rgb(0,0,0,0.1)] sm:h-14 sm:w-auto sm:px-8 sm:text-[15px]"
+            className="group h-12 w-full rounded-xl px-7 text-sm font-semibold shadow-md shadow-primary/20 sm:h-14 sm:w-auto sm:px-8 sm:text-[15px]"
             render={<Link href="/services" />}
           >
             View Full Treatment Menu
-            <div className="ml-3 flex size-6 items-center justify-center rounded-full bg-primary/10 text-primary transition-transform duration-300 group-hover:translate-x-1">
-              <ArrowRight className="size-3.5" />
-            </div>
+            <ArrowRight className="ml-2 size-5 transition-transform duration-300 group-hover:translate-x-1" />
           </Button>
         </FadeIn>
       </div>

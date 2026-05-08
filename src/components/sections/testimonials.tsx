@@ -3,7 +3,7 @@
 import * as React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
-import { Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 import { testimonials } from "@/lib/data/site-data";
 import { cn } from "@/lib/utils";
 import { FadeIn } from "@/components/ui-custom/animations";
@@ -65,8 +65,10 @@ export function TestimonialsSection() {
                   key={`${testimonial.name}-${index}`}
                   className="min-w-0 flex-[0_0_86%] sm:flex-[0_0_72%] lg:flex-[0_0_420px]"
                 >
-                  <article className="flex h-full min-h-[232px] flex-col gap-4 rounded-[24px] border border-border/80 bg-white/92 p-5 shadow-[0_24px_70px_-50px_rgba(8,36,78,0.38)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_28px_80px_-48px_rgba(8,36,78,0.42)] sm:min-h-[260px] sm:gap-5 sm:rounded-[28px] sm:p-7">
-                    <div className="flex gap-1">
+                  <article className="group relative flex h-full min-h-[232px] flex-col gap-4 overflow-hidden rounded-[24px] border border-primary/30 bg-white/92 bg-gradient-to-br from-white/60 to-primary/[0.02] p-5 shadow-[0_24px_70px_-50px_rgba(8,36,78,0.38)] backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:border-primary/60 hover:bg-gradient-to-br hover:from-white/80 hover:to-primary/[0.08] hover:shadow-[0_28px_80px_-48px_rgba(8,36,78,0.42)] sm:min-h-[260px] sm:gap-5 sm:rounded-[28px] sm:p-7">
+                    <Quote className="absolute -right-4 -top-4 size-24 rotate-12 text-primary/[0.04] transition-transform duration-500 group-hover:-rotate-12 group-hover:scale-110 group-hover:text-primary/[0.08]" />
+                    
+                    <div className="relative z-10 flex gap-1">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
