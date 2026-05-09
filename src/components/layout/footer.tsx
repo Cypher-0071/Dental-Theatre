@@ -61,8 +61,8 @@ export function Footer() {
                 { label: "About Dr. Parul", href: "/about" },
                 { label: "Our Services", href: "/services" },
                 { label: "Smile Gallery", href: "/gallery" },
-                { label: "Patient Stories", href: "/testimonials" },
-                { label: "Contact Us", href: "#locations" },
+                { label: "Patient Stories", href: "/#testimonials" },
+                { label: "Contact Us", href: "/#locations" },
               ].map((link) => (
                 <Link
                   key={link.href}

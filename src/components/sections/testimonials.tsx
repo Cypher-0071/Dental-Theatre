@@ -31,7 +31,7 @@ export function TestimonialsSection() {
   );
 
   return (
-    <section className="overflow-hidden py-10 sm:py-8 lg:py-12">
+    <section id="testimonials" className="overflow-hidden py-10 sm:py-8 lg:py-12">
       <div className="container mx-auto mb-7 max-w-7xl px-5 sm:mb-12 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
           <FadeIn direction="up">
