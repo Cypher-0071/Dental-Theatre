@@ -5,6 +5,7 @@
 <li>(Diploma in Oral Surgery) IMPLANTOLOGIST ALIGNER SPECIALIST</li>
 <li>pearljangra160794@gmail.com</li>
 </ol>
+has 7 years of exp
 
 # Dr. Bijender Duhan
 <ol>
@@ -13,6 +14,7 @@
 <li>(Diploma in Ortho & Oral Surgery) IMPLANTOLOGY</li>
 <li>bijendersingh196@gmail.com</li>
 </ol>
+has 12 years of exp
 
 > Services Offered at location 1
 <ol>
@@ -49,3 +51,7 @@ Main Sanoli Road, Marble/Pathar Market Near Chhoker Petrol Pump, Panipat
 
 ph no - 8930244673, 8930244673
 Whatsapp no - 8930010599
+
+> Miscleanous
+
+1L+ patients treated, 12K+ surgeries done
