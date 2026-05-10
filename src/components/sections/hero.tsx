@@ -18,10 +18,20 @@ import { FadeIn } from "@/components/ui-custom/animations";
 import { Counter } from "@/components/ui-custom/counter";
 
 const stats = [
-  { value: 10, suffix: "k+", label: "Happy Patients", icon: Users },
-  { value: 12, suffix: "+", label: "Years Experience", icon: CalendarCheck },
+  { 
+    value: 100, 
+    suffix: "+", 
+    label: "Happy Patients", 
+    icon: Users,
+    formatFn: (v: number) => {
+      const floored = Math.floor(v);
+      if (floored >= 100) return "1L";
+      if (floored === 0) return "0";
+      return `${floored}k`;
+    }
+  },
   { value: 4.9, suffix: "", label: "Google Rating", icon: Star, decimals: 1 },
-  { value: 3, suffix: "", label: "Clinic Locations", icon: MapPin },
+  { value: 2, suffix: "", label: "Locations", icon: MapPin },
 ];
 
 export function Hero() {
@@ -118,13 +128,13 @@ export function Hero() {
             STAT BAR — directly under CTA over image
         ══════════════════════════════════════════ */}
         <FadeIn direction="up" delay={0.34}>
-          <div className="mt-6 sm:mt-8 w-full max-w-4xl grid grid-cols-2 sm:grid-cols-4 divide-x divide-white/15 border-t border-white/15 pt-6 sm:pt-8">
-            {stats.map(({ value, suffix, label, decimals }) => (
-              <div key={label} className="flex flex-col items-center justify-center px-4">
-                <p className="text-3xl sm:text-4xl font-light tracking-tight text-white mb-1.5 drop-shadow-md">
-                  <Counter value={value} suffix={suffix} decimals={decimals ?? 0} />
+          <div className="mt-6 sm:mt-8 w-full max-w-3xl mx-auto grid grid-cols-3 divide-x divide-white/15 border-t border-white/15 pt-6 sm:pt-8">
+            {stats.map(({ value, suffix, label, decimals, formatFn }) => (
+              <div key={label} className="flex flex-col items-center justify-center px-2 sm:px-4">
+                <p className="text-2xl sm:text-4xl font-light tracking-tight text-white mb-1.5 drop-shadow-md">
+                  <Counter value={value} suffix={suffix} decimals={decimals ?? 0} formatFn={formatFn} />
                 </p>
-                <p className="text-[10px] sm:text-[11px] font-semibold text-white/60 uppercase tracking-[0.15em] text-center drop-shadow-sm">
+                <p className="text-[9px] sm:text-[11px] font-semibold text-white/60 uppercase tracking-[0.15em] text-center drop-shadow-sm">
                   {label}
                 </p>
               </div>
