@@ -16,12 +16,14 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetHeader, SheetFooter } from "@/components/ui/sheet";
-import { Menu, Phone, MessageSquare, Home, Info, Stethoscope, Image as ImageIcon, Mail, Instagram, Facebook, Youtube } from "lucide-react";
+import { Menu, Phone, MessageSquare, Home, Info, Stethoscope, Image as ImageIcon, Mail, Instagram, Facebook, Youtube, Users } from "lucide-react";
 import { siteConfig } from "@/lib/data/site-data";
 
 const navItems = [
   { title: "Home", href: "/", icon: Home },
   { title: "About", href: "/about", icon: Info },
+  { title: "Dr. Parul", href: "/dr-parul-jangra", icon: Users },
+  { title: "Dr. Bijender", href: "/dr-bijender-duhan", icon: Users },
   { title: "Services", href: "/services", icon: Stethoscope },
   { title: "Gallery", href: "/gallery", icon: ImageIcon },
   { title: "Contact", href: "/#locations", icon: Phone },

@@ -28,11 +28,11 @@ export const siteConfig = {
       mapUrl: "https://www.google.com/maps/dir/?api=1&destination=Dr+Duhan+and+Dr+Parul's+Dental+Theatre+-+Sanoli+Road+Panipat",
     },
     {
-      name: "Dental Theatre - City Center",
-      address: "GT Road, Near Bus Stand, Panipat, Haryana 132103",
+      name: "Dental Theatre - Gupta Hospital",
+      address: "Room No. 25, G.C. Gupta Hospital, Gohana Road, HUDA Sector 11, Panipat",
       phone: "+91 89302 44673",
-      hours: "Mon-Sat: 10:00 AM - 8:00 PM, Sun: 10:00 AM - 2:00 PM",
-      mapUrl: "https://www.google.com/maps/dir/?api=1&destination=Panipat,+Haryana",
+      hours: "Open 24hrs",
+      mapUrl: "https://www.google.com/maps/place/Dr+Duhan+%26+Dr+Parul%E2%80%99s+DENTAL+Theatre/@29.3806061,76.9768055,19.75z/data=!4m6!3m5!1s0x48fc794398599e8f:0x54a48e94484ea7e3!8m2!3d29.3806952!4d76.9769885!16s%2Fg%2F11tp5rv3k1?entry=ttu&g_ep=EgoyMDI2MDUwNi4wIKXMDSoASAFQAw%3D%3D",
     },
     {
       name: "Dental Theatre - HUDA Section",
