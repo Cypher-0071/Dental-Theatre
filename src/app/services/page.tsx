@@ -42,24 +42,24 @@ export default function ServicesPage() {
 
               return (
                 <FadeIn key={service.slug} direction="up" delay={i * 0.02}>
-                  <Link href={`/services/${service.slug}`} className="group block h-full">
+                  <Link href={`/services/${service.slug}`} className="group block sm:h-full">
                     <Card
-                      className="h-full overflow-hidden rounded-[20px] border border-white/60 bg-white/70 shadow-[0_4px_20px_rgb(0,0,0,0.03)] backdrop-blur-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:border-primary/20 group-hover:bg-white group-hover:shadow-[0_15px_40px_-10px_rgba(11,56,102,0.1)]"
+                      className="sm:h-full overflow-hidden rounded-[20px] border border-white/60 bg-white/70 shadow-[0_4px_20px_rgb(0,0,0,0.03)] backdrop-blur-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:border-primary/20 group-hover:bg-white group-hover:shadow-[0_15px_40px_-10px_rgba(11,56,102,0.1)] py-0 gap-0 sm:py-4 sm:gap-4"
                     >
-                      <CardContent className="flex h-full flex-col p-6">
-                        <div className="mb-4 flex size-12 items-center justify-center rounded-2xl border border-primary/10 bg-primary/5 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
-                          <Icon className="size-6" />
+                      <CardContent className="flex sm:h-full flex-col p-4 sm:p-6">
+                        <div className="mb-3 flex size-9 items-center justify-center rounded-xl border border-primary/10 bg-primary/5 text-primary transition-colors group-hover:bg-primary group-hover:text-white sm:mb-4 sm:size-12 sm:rounded-2xl">
+                          <Icon className="size-4 sm:size-6" />
                         </div>
                         
-                        <h3 className="mb-2 text-lg font-bold leading-tight text-foreground transition-colors group-hover:text-primary">
+                        <h3 className="mb-1.5 text-[15px] font-bold leading-tight text-foreground transition-colors group-hover:text-primary sm:mb-2 sm:text-lg">
                           {service.title}
                         </h3>
                         
-                        <p className="mb-4 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
+                        <p className="mb-3 line-clamp-2 text-[13px] leading-relaxed text-muted-foreground sm:mb-4 sm:text-sm">
                           {service.description}
                         </p>
                         
-                        <div className="mt-auto flex items-center text-xs font-bold text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                        <div className="mt-auto hidden sm:flex items-center text-xs font-bold text-primary opacity-0 transition-opacity group-hover:opacity-100">
                           LEARN MORE
                           <ArrowRight className="ml-1.5 size-3.5" />
                         </div>
