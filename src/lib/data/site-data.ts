@@ -36,7 +36,7 @@ export const siteConfig = {
       mapUrl: "https://www.google.com/maps/dir/?api=1&destination=Dr+Duhan+and+Dr+Parul's+Dental+Theatre+-+Sanoli+Road+Panipat",
     },
     {
-      name: "Dental Theatre - Gupta Hospital",
+      name: "Dental Theatre - GC Gupta Hospital",
       address: "Room No. 25, G.C. Gupta Hospital, Gohana Road, HUDA Sector 11, Panipat",
       phone: "+91 89300 10599",
       hours: "Open 24hrs",
