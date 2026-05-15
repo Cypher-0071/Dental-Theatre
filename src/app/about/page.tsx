@@ -1,5 +1,4 @@
-"use client";
-
+import Image from "next/image";
 import { FadeIn, StaggerContainer } from "@/components/ui-custom/animations";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -32,6 +31,8 @@ export default function AboutPage() {
       speciality: "Implantologist & Aligner Specialist",
       exp: "7+ Years Experience",
       href: "/dr-parul-jangra",
+      image: "/Dr parul.jpeg",
+      imagePos: "object-center",
       bio: "Dr. Parul specialises in aesthetic transformations, dental implants, and clear aligner therapy. Her approach blends clinical precision with an eye for natural beauty — creating smiles that feel as good as they look.",
       accentColor: "from-sky-50 to-blue-50/40",
     },
@@ -41,6 +42,8 @@ export default function AboutPage() {
       speciality: "Oral Surgeon & Implantologist",
       exp: "12+ Years Experience",
       href: "/dr-bijender-duhan",
+      image: "/Dr duhan.jpeg",
+      imagePos: "object-[50%_25%]",
       bio: "Dr. Bijender brings over a decade of expertise in oral and maxillofacial surgery, fracture management, and complex implantology. His surgical depth is the backbone of Dental Theatre's advanced care capability.",
       accentColor: "from-slate-50 to-zinc-50/40",
     },
@@ -151,12 +154,14 @@ export default function AboutPage() {
               <FadeIn key={founder.name} direction="up" delay={i * 0.12}>
                 <Link href={founder.href} className="block h-full group">
                   <div className={`relative flex flex-col h-full rounded-2xl border border-border/60 bg-gradient-to-br ${founder.accentColor} overflow-hidden shadow-sm transition-all duration-300 hover:shadow-xl hover:border-primary/30 hover:-translate-y-1`}>
-                    {/* Top: photo placeholder */}
-                    <div className="relative hidden aspect-[16/9] w-full items-center justify-center overflow-hidden border-b border-border/40 bg-muted/30 sm:flex">
-                      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(68,107,158,0.05),transparent_60%)]" />
-                      <span className="text-muted-foreground/30 font-medium text-xs uppercase tracking-widest z-10">
-                        Photo Placeholder
-                      </span>
+                    {/* Top: photo */}
+                    <div className="relative aspect-[16/9] w-full items-center justify-center overflow-hidden border-b border-border/40 bg-muted/30 flex">
+                      <Image 
+                        src={founder.image} 
+                        alt={founder.name} 
+                        fill 
+                        className={`object-cover ${founder.imagePos} transition-transform duration-500 group-hover:scale-105`}
+                      />
                     </div>
 
                     {/* Body */}
@@ -320,11 +325,7 @@ export default function AboutPage() {
               </div>
             </FadeIn>
             <FadeIn direction="left">
-              <div className="relative hidden aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-[24px] border border-white/15 bg-white/5 shadow-2xl backdrop-blur-sm lg:flex">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1),transparent_50%)]" />
-                <span className="text-white/40 text-sm font-medium tracking-widest uppercase relative z-10">
-                  Clinic Interior · Coming Soon
-                </span>
+              <div className="relative aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-[24px] border border-white/15 bg-white shadow-2xl backdrop-blur-sm lg:flex">
               </div>
             </FadeIn>
           </div>

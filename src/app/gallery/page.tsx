@@ -1,20 +1,48 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { FadeIn, StaggerContainer } from "@/components/ui-custom/animations";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import { Maximize2, ArrowRight } from "lucide-react";
 
-const categories = ["All", "Clinic", "Doctor at Work", "Procedures", "Patient Setups"];
+const categories = ["All", "Smile Gallery", "Doctor at Work", "Before & After"];
 
 const galleryImages = [
-  { id: 1, category: "Clinic", title: "Modern Reception", placeholder: "Reception Area" },
-  { id: 2, category: "Clinic", title: "Operation Theatre", placeholder: "Theatre Room" },
-  { id: 3, category: "Doctor at Work", title: "Dr. Parul Consulting", placeholder: "Consultation" },
-  { id: 4, category: "Procedures", title: "Advanced Laser Treatment", placeholder: "Laser Procedure" },
-  { id: 5, category: "Patient Setups", title: "Comfortable Dental Chair", placeholder: "Patient Comfort" },
-  { id: 6, category: "Procedures", title: "Digital X-Ray", placeholder: "Diagnostics" },
+  // Doctor at Work (Prioritized)
+  { id: 27, category: "Doctor at Work", title: "Clinical Excellence", src: "/img_7.jpeg" },
+  { id: 22, category: "Doctor at Work", title: "Clinical Excellence", src: "/img_1.jpeg" },
+  { id: 23, category: "Doctor at Work", title: "Clinical Excellence", src: "/img_2.jpeg" },
+  { id: 24, category: "Doctor at Work", title: "Clinical Excellence", src: "/img-3.jpeg" },
+  { id: 25, category: "Doctor at Work", title: "Clinical Excellence", src: "/img_4.jpeg" },
+  { id: 26, category: "Doctor at Work", title: "Clinical Excellence", src: "/img_6.jpeg" },
+  { id: 28, category: "Doctor at Work", title: "Clinical Excellence", src: "/img_8.jpeg" },
+
+  // Smile Gallery
+  { id: 1, category: "Smile Gallery", title: "Smile Transformation", src: "/smile_1.jpeg" },
+  { id: 2, category: "Smile Gallery", title: "Smile Transformation", src: "/smile_2.jpeg" },
+  { id: 3, category: "Smile Gallery", title: "Smile Transformation", src: "/smile_3.jpeg" },
+  { id: 4, category: "Smile Gallery", title: "Smile Transformation", src: "/smile_4.jpeg" },
+  { id: 5, category: "Smile Gallery", title: "Smile Transformation", src: "/smile_5.jpeg" },
+  { id: 6, category: "Smile Gallery", title: "Smile Transformation", src: "/smile_6.jpeg" },
+  { id: 7, category: "Smile Gallery", title: "Smile Transformation", src: "/smile_7.jpeg" },
+  { id: 8, category: "Smile Gallery", title: "Smile Transformation", src: "/smile_8.jpeg" },
+  { id: 9, category: "Smile Gallery", title: "Smile Transformation", src: "/smile_9.jpeg" },
+  { id: 10, category: "Smile Gallery", title: "Smile Transformation", src: "/smile_10.jpeg" },
+  { id: 11, category: "Smile Gallery", title: "Smile Transformation", src: "/smile_11.jpeg" },
+  { id: 12, category: "Smile Gallery", title: "Smile Transformation", src: "/smile_12.jpeg" },
+  
+  // Before & After
+  { id: 13, category: "Before & After", title: "Treatment Result", src: "/b&a_1.jpeg" },
+  { id: 14, category: "Before & After", title: "Treatment Result", src: "/b&a_2.jpeg" },
+  { id: 15, category: "Before & After", title: "Treatment Result", src: "/b&a_3.jpeg" },
+  { id: 16, category: "Before & After", title: "Treatment Result", src: "/b&a_4.jpeg" },
+  { id: 17, category: "Before & After", title: "Treatment Result", src: "/b&a_5.jpeg" },
+  { id: 18, category: "Before & After", title: "Treatment Result", src: "/b&a_6.jpeg" },
+  { id: 19, category: "Before & After", title: "Treatment Result", src: "/b&a_7.jpeg" },
+  { id: 20, category: "Before & After", title: "Treatment Result", src: "/b&a_8.png" },
+  { id: 21, category: "Before & After", title: "Treatment Result", src: "/b&a_9.jpeg" },
 ];
 
 export default function GalleryPage() {
@@ -34,9 +62,9 @@ export default function GalleryPage() {
             <p className="text-[11px] font-semibold tracking-widest uppercase text-primary mb-3">
               Inside Dental Theatre
             </p>
-            <h1 className="mb-4 text-[2rem] font-bold tracking-tight md:text-5xl">Smile Gallery</h1>
+            <h1 className="mb-4 text-[2rem] font-bold tracking-tight md:text-5xl">Gallery</h1>
             <p className="mx-auto max-w-xl text-[14px] leading-relaxed text-muted-foreground sm:text-[15px]">
-              A glimpse into our world of precision and care. Explore our facilities, procedures, and transformations.
+              A glimpse into our world of precision and care.
             </p>
           </FadeIn>
         </div>
@@ -75,31 +103,41 @@ export default function GalleryPage() {
 
           <StaggerContainer className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
             {filteredImages.map((image, i) => (
-              <FadeIn key={image.id} direction="up" delay={i * 0.06}>
+              <FadeIn key={image.id} direction="up" delay={i * 0.04}>
                 <Dialog>
                   <DialogTrigger
                     nativeButton={false}
                     render={
-                      <div className="group relative aspect-square cursor-pointer overflow-hidden rounded-[20px] border border-border/50 bg-muted/30 shadow-sm transition-all duration-300 hover:border-primary/20 hover:shadow-lg sm:rounded-xl">
-                        <div className="absolute inset-0 bg-gradient-to-br from-primary/15 to-transparent opacity-60" />
-                        <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/30 font-semibold uppercase tracking-widest text-xs text-center p-4">
-                          {image.placeholder}
-                        </div>
-                        <div className="absolute inset-0 bg-primary/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-6">
-                          <Maximize2 className="size-8 mb-3 scale-75 group-hover:scale-100 transition-transform duration-300" />
-                          <h3 className="text-base font-semibold text-center leading-snug">{image.title}</h3>
-                          <p className="text-xs opacity-75 mt-1">{image.category}</p>
+                      <div className="group relative aspect-square cursor-pointer overflow-hidden rounded-[20px] border border-border/50 bg-muted/30 shadow-sm transition-all duration-500 hover:border-primary/20 hover:shadow-xl sm:rounded-xl">
+                        <Image
+                          src={image.src}
+                          alt={image.title}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end p-6">
+                          <Maximize2 className="size-6 text-white mb-2" />
+                          <h3 className="text-white text-sm font-semibold text-center">{image.title}</h3>
+                          <p className="text-white/70 text-xs mt-1">{image.category}</p>
                         </div>
                       </div>
                     }
                   />
-                  <DialogContent className="max-w-4xl p-0 overflow-hidden border-none bg-transparent shadow-none">
+                  <DialogContent className="max-w-[95vw] md:max-w-7xl p-0 overflow-hidden border-none bg-black/95 shadow-2xl">
                     <DialogTitle className="sr-only">{image.title}</DialogTitle>
-                    <div className="aspect-video w-full bg-muted rounded-xl flex items-center justify-center relative overflow-hidden">
-                      <div className="text-muted-foreground/30 font-semibold text-lg">{image.placeholder} · Full View</div>
-                      <div className="absolute bottom-0 left-0 right-0 px-6 py-5 bg-gradient-to-t from-black/70 to-transparent text-white">
-                        <h3 className="text-lg font-semibold">{image.title}</h3>
-                        <p className="text-xs opacity-70 mt-0.5">{image.category}</p>
+                    <div className="relative h-[80vh] w-full flex items-center justify-center">
+                      <Image
+                        src={image.src}
+                        alt={image.title}
+                        fill
+                        className="object-contain"
+                        priority
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 px-6 py-8 bg-gradient-to-t from-black/90 via-black/40 to-transparent text-white">
+                        <div className="container mx-auto max-w-4xl">
+                          <h3 className="text-xl md:text-2xl font-bold tracking-tight">{image.title}</h3>
+                          <p className="text-sm md:text-base font-medium opacity-80 mt-1">{image.category}</p>
+                        </div>
                       </div>
                     </div>
                   </DialogContent>

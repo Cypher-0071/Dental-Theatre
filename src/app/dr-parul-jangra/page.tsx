@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FadeIn, StaggerContainer } from "@/components/ui-custom/animations";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -74,10 +75,14 @@ export default function DrParulPage() {
               {/* Mobile photo placeholder replacing pills */}
               <div className="mt-8 relative block lg:hidden">
                 <div className="absolute -inset-3 rounded-[36px] bg-gradient-to-br from-primary/10 to-sky-200/40 blur-sm" />
-                <div className="relative aspect-[4/5] w-full max-w-[420px] mx-auto overflow-hidden rounded-[28px] bg-white border border-border/50 shadow-2xl flex flex-col items-center justify-center gap-3">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(186,230,255,0.3),transparent_60%)]" />
-                  <GraduationCap className="size-10 text-primary/20" />
-                  <span className="text-muted-foreground/40 font-medium text-sm uppercase tracking-widest">Photo Placeholder</span>
+                <div className="relative aspect-[4/5] w-full max-w-[420px] mx-auto overflow-hidden rounded-[28px] bg-white border border-border/50 shadow-2xl">
+                  <Image 
+                    src="/Dr parul.jpeg" 
+                    alt="Dr. Parul Jangra" 
+                    fill 
+                    className="object-cover"
+                    priority
+                  />
                 </div>
               </div>
             </FadeIn>
@@ -85,10 +90,14 @@ export default function DrParulPage() {
             <FadeIn direction="left" delay={0.15}>
               <div className="relative hidden lg:block">
                 <div className="absolute -inset-3 rounded-[36px] bg-gradient-to-br from-primary/10 to-sky-200/40 blur-sm" />
-                <div className="relative aspect-[4/5] w-full max-w-[420px] mx-auto overflow-hidden rounded-[28px] bg-white border border-border/50 shadow-2xl flex flex-col items-center justify-center gap-3">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(186,230,255,0.3),transparent_60%)]" />
-                  <GraduationCap className="size-10 text-primary/20" />
-                  <span className="text-muted-foreground/40 font-medium text-sm uppercase tracking-widest">Photo Placeholder</span>
+                <div className="relative aspect-[4/5] w-full max-w-[420px] mx-auto overflow-hidden rounded-[28px] bg-white border border-border/50 shadow-2xl">
+                  <Image 
+                    src="/Dr parul.jpeg" 
+                    alt="Dr. Parul Jangra" 
+                    fill 
+                    className="object-cover"
+                    priority
+                  />
                 </div>
               </div>
             </FadeIn>
