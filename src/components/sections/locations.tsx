@@ -7,6 +7,7 @@ import { siteConfig } from "@/lib/data/site-data";
 import { FadeIn } from "@/components/ui-custom/animations";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const doctors = [
@@ -133,14 +134,28 @@ export function LocationsSection({ id }: { id?: string }) {
                   {/* Mobile Image/Map column */}
                   <div className="order-3 block lg:hidden">
                     <div className="relative h-[360px] w-full overflow-hidden rounded-[26px] shadow-2xl shadow-primary/10 ring-1 ring-border/50 sm:h-[430px] sm:rounded-[32px]">
-                      <div className={cn("absolute inset-0 transition-colors duration-500", activeLocation.image)}>
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.2),transparent_50%)]" />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <p className="text-white/60 tracking-widest uppercase text-xs font-semibold">Clinic Interior</p>
-                        </div>
-                      </div>
+                      {activeIndex === 0 ? (
+                        <>
+                          <Image
+                            src="/main_clinic.png"
+                            alt="Clinic Interior"
+                            fill
+                            className="object-cover"
+                          />
+                          
 
-                      <div className="absolute right-4 bottom-4 left-4 h-[38%] overflow-hidden rounded-2xl bg-white shadow-2xl ring-4 ring-white/20 sm:left-auto sm:right-6 sm:bottom-6 sm:h-[30%] sm:min-h-[160px] sm:w-[35%] sm:min-w-[200px]">
+                          <div className="absolute right-4 bottom-4 left-4 h-[38%] overflow-hidden rounded-2xl bg-white shadow-2xl ring-4 ring-white/20 sm:left-auto sm:right-6 sm:bottom-6 sm:h-[30%] sm:min-h-[160px] sm:w-[35%] sm:min-w-[200px]">
+                            <iframe
+                              src={activeLocation.mapEmbed}
+                              className="w-full h-full border-0"
+                              allowFullScreen={false}
+                              loading="lazy"
+                              referrerPolicy="no-referrer-when-downgrade"
+                            />
+                            <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-black/10 rounded-2xl" />
+                          </div>
+                        </>
+                      ) : (
                         <iframe
                           src={activeLocation.mapEmbed}
                           className="w-full h-full border-0"
@@ -148,8 +163,7 @@ export function LocationsSection({ id }: { id?: string }) {
                           loading="lazy"
                           referrerPolicy="no-referrer-when-downgrade"
                         />
-                        <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-black/10 rounded-2xl" />
-                      </div>
+                      )}
                     </div>
                   </div>
 
@@ -193,14 +207,28 @@ export function LocationsSection({ id }: { id?: string }) {
 
                 <div className="hidden lg:block lg:col-start-2 lg:-mt-12">
                   <div className="relative h-[360px] w-full overflow-hidden rounded-[26px] shadow-2xl shadow-primary/10 ring-1 ring-border/50 sm:h-[430px] sm:rounded-[32px] lg:h-[500px]">
-                    <div className={cn("absolute inset-0 transition-colors duration-500", activeLocation.image)}>
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.2),transparent_50%)]" />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <p className="text-white/60 tracking-widest uppercase text-xs font-semibold">Clinic Interior</p>
-                      </div>
-                    </div>
+                    {activeIndex === 0 ? (
+                      <>
+                        <Image
+                          src="/main_clinic.png"
+                          alt="Clinic Interior"
+                          fill
+                          className="object-cover"
+                        />
+                        
 
-                    <div className="absolute right-4 bottom-4 left-4 h-[38%] overflow-hidden rounded-2xl bg-white shadow-2xl ring-4 ring-white/20 sm:left-auto sm:right-6 sm:bottom-6 sm:h-[30%] sm:min-h-[160px] sm:w-[35%] sm:min-w-[200px]">
+                        <div className="absolute right-4 bottom-4 left-4 h-[38%] overflow-hidden rounded-2xl bg-white shadow-2xl ring-4 ring-white/20 sm:left-auto sm:right-6 sm:bottom-6 sm:h-[30%] sm:min-h-[160px] sm:w-[35%] sm:min-w-[200px]">
+                          <iframe
+                            src={activeLocation.mapEmbed}
+                            className="w-full h-full border-0"
+                            allowFullScreen={false}
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                          />
+                          <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-black/10 rounded-2xl" />
+                        </div>
+                      </>
+                    ) : (
                       <iframe
                         src={activeLocation.mapEmbed}
                         className="w-full h-full border-0"
@@ -208,8 +236,7 @@ export function LocationsSection({ id }: { id?: string }) {
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
                       />
-                      <div className="absolute inset-0 pointer-events-none ring-1 ring-inset ring-black/10 rounded-2xl" />
-                    </div>
+                    )}
                   </div>
                 </div>
               </motion.div>
