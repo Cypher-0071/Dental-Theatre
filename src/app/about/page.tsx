@@ -76,13 +76,37 @@ export default function AboutPage() {
     },
   ];
 
-  const highlights = [
-    "Advanced Implant, Aligner & Smile Design Solutions",
-    "State-of-the-Art Surgical & Digital Imaging Facilities",
-    "Single-Sitting RCT & Laser Dental Procedures",
-    "Zirconia, Emax & DMLS Crown Technology",
-    "Facial Fracture & Oral Surgery Expertise",
-    "Oral Cancer Screening & Preventive Dentistry",
+  const detailedHighlights = [
+    {
+      title: "Advanced Solutions",
+      description: "Expertise in Dental Implants, Clear Aligners, and full Smile Design transformations.",
+      icon: Sparkles,
+    },
+    {
+      title: "Digital Facilities",
+      description: "Equipped with state-of-the-art surgical units and digital imaging for precise diagnosis.",
+      icon: Hospital,
+    },
+    {
+      title: "Laser Procedures",
+      description: "Modern Single-Sitting RCTs and Laser treatments for a painless, faster recovery.",
+      icon: Activity,
+    },
+    {
+      title: "Premium Technology",
+      description: "Highest quality Zirconia, Emax, and DMLS technology for durable and natural crowns.",
+      icon: Microscope,
+    },
+    {
+      title: "Oral Surgery",
+      description: "Advanced expertise in facial fractures, wisdom tooth extractions, and minor oral surgeries.",
+      icon: ShieldCheck,
+    },
+    {
+      title: "Preventive Care",
+      description: "Comprehensive oral cancer screenings and preventive protocols to keep your smile healthy.",
+      icon: CheckCircle2,
+    },
   ];
 
   return (
@@ -291,46 +315,57 @@ export default function AboutPage() {
       </section>
 
       {/* ─── Why Choose Us ─── */}
-      <section className="bg-primary py-14 text-primary-foreground sm:py-24">
-        <div className="container mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
-          <div className="grid grid-cols-1 items-center gap-10 sm:gap-16 lg:grid-cols-2">
-            <FadeIn direction="right">
-              <p className="text-[11px] font-semibold tracking-widest uppercase text-white/50 mb-4">
+      <section className="relative overflow-hidden bg-primary py-16 text-primary-foreground sm:py-24 lg:py-32">
+        {/* Background elements */}
+        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.05),transparent_50%)]" />
+        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.05),transparent_50%)]" />
+
+        <div className="container relative z-10 mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
+          <div className="mx-auto max-w-3xl text-center mb-12 sm:mb-20">
+            <FadeIn direction="up">
+              <p className="text-[11px] font-bold tracking-[0.2em] uppercase text-white/50 mb-4">
                 The Theatre Experience
               </p>
-              <h2 className="mb-7 text-[2rem] font-bold leading-tight tracking-tight md:mb-10 md:text-4xl">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
                 Why Choose Dental Theatre?
               </h2>
-              <div className="grid grid-cols-1 gap-4 sm:flex sm:flex-col sm:gap-5">
-                {highlights.map((item, i) => (
-                  <div key={i} className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 sm:rounded-none sm:border-0 sm:bg-transparent sm:px-0 sm:py-0 sm:gap-4">
-                    <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-white/80" />
-                    <span className="text-[14px] leading-6 opacity-90 sm:text-base sm:leading-snug">
-                      {item}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8 sm:mt-12">
-                <Link href="/contact">
-                  <Button
-                    size="lg"
-                    variant="secondary"
-                    className="inline-flex w-full items-center justify-center gap-2 px-8 font-semibold text-primary hover:bg-white/90 sm:w-auto"
-                  >
-                    Book an Appointment
-                    <ArrowRight className="size-4" />
-                  </Button>
-                </Link>
-              </div>
-            </FadeIn>
-            <FadeIn direction="left">
-              <div className="relative aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-[24px] border border-white/15 bg-white shadow-2xl backdrop-blur-sm lg:flex">
-              </div>
+              <div className="mt-6 mx-auto h-1 w-20 rounded-full bg-white/20" />
             </FadeIn>
           </div>
+
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {detailedHighlights.map((item, i) => (
+              <FadeIn key={i} direction="up" delay={i * 0.05}>
+                <div className="group relative h-full rounded-3xl border border-white/10 bg-white/[0.03] p-6 sm:p-8 transition-all duration-300 hover:bg-white/[0.06] hover:border-white/20">
+                  <div className="mb-5 flex size-12 items-center justify-center rounded-2xl bg-white/10 text-white transition-transform duration-300 group-hover:scale-110 group-hover:bg-white/15">
+                    <item.icon className="size-6" />
+                  </div>
+                  <h3 className="mb-3 text-xl font-bold text-white">
+                    {item.title}
+                  </h3>
+                  <p className="text-[15px] leading-relaxed text-white/70">
+                    {item.description}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </StaggerContainer>
+
+          <FadeIn direction="up" delay={0.4} className="mt-16 text-center">
+            <Link href="/contact">
+              <Button
+                size="lg"
+                variant="secondary"
+                className="inline-flex h-14 items-center justify-center gap-3 px-10 text-base font-bold text-primary hover:bg-white transition-all duration-300 shadow-xl hover:shadow-white/10"
+              >
+                Book Your Consultation
+                <ArrowRight className="size-5" />
+              </Button>
+            </Link>
+          </FadeIn>
         </div>
       </section>
     </div>
   );
 }
+
