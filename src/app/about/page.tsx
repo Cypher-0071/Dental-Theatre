@@ -19,33 +19,33 @@ import { cn } from "@/lib/utils";
 
 export default function AboutPage() {
   const stats = [
-    { title: "1L+", description: "Happy Patients Treated", icon: Users },
-    { title: "12K+", description: "Complex Surgeries Completed", icon: Activity },
-    { title: "2", description: "Premium Clinic Locations", icon: Hospital },
-    { title: "19+", description: "Years Combined Experience", icon: Sparkles },
+    { title: "1L+", description: "Clinical Cases Resolved", icon: Users },
+    { title: "12K+", description: "Specialist Surgeries", icon: Activity },
+    { title: "2", description: "Modern Diagnostic Centers", icon: Hospital },
+    { title: "19+", description: "Years Specialist Expertise", icon: Sparkles },
   ];
 
   const founders = [
     {
       name: "Dr. Parul Jangra",
       credentials: "BDS, M.I.D.A · Diploma in Oral Surgery",
-      speciality: "Implantologist & Aligner Specialist",
-      exp: "7+ Years Experience",
+      speciality: "Aesthetic Specialist & Implantologist",
+      exp: "7+ Years Clinical Practice",
       href: "/dr-parul-jangra",
       image: "/Dr parul.jpeg",
       imagePos: "object-center",
-      bio: "Dr. Parul specialises in aesthetic transformations, dental implants, and clear aligner therapy. Her approach blends clinical precision with an eye for natural beauty — creating smiles that feel as good as they look.",
+      bio: "Dr. Parul focuses on the intersection of clinical health and facial aesthetics. Her expertise in aligners and implants is defined by a commitment to natural-looking results and long-term functional stability.",
       accentColor: "from-sky-50 to-blue-50/40",
     },
     {
       name: "Dr. Bijender Duhan",
       credentials: "BDS, M.I.D.A · Diploma in Ortho & Oral Surgery",
-      speciality: "Oral Surgeon & Implantologist",
-      exp: "12+ Years Experience",
+      speciality: "Oral Surgeon & Maxillofacial Expert",
+      exp: "12+ Years Surgical Expertise",
       href: "/dr-bijender-duhan",
       image: "/Dr duhan.jpeg",
       imagePos: "object-[50%_25%]",
-      bio: "Dr. Bijender brings over a decade of expertise in oral and maxillofacial surgery, fracture management, and complex implantology. His surgical depth is the backbone of Dental Theatre's advanced care capability.",
+      bio: "With over a decade of experience in complex maxillofacial surgery and trauma management, Dr. Bijender provides the surgical depth required for high-stakes implantology and corrective jaw procedures.",
       accentColor: "from-slate-50 to-zinc-50/40",
     },
   ];
@@ -53,59 +53,59 @@ export default function AboutPage() {
   const values = [
     {
       icon: HeartHandshake,
-      title: "Patient-First, Always",
+      title: "Specialist-Led Consultation",
       description:
-        "Every treatment plan is built around your unique needs, comfort, and long-term oral health — not a generic checklist.",
+        "We don't believe in generic checklists. Every treatment plan is architected by our lead specialists to ensure long-term clinical predictability.",
     },
     {
       icon: Microscope,
-      title: "Evidence-Based Precision",
+      title: "Clinical Accuracy",
       description:
-        "From digital oral scans to Zirconia crowns, we employ the latest technology to deliver accurate, lasting results.",
+        "From digital intraoral scanning to CAD/CAM restorations, we utilize advanced diagnostic infrastructure to eliminate guesswork and deliver precise results.",
     },
     {
       icon: ShieldCheck,
-      title: "Transparent & Ethical Care",
+      title: "Ethical Integrity",
       description:
-        "No hidden costs, no unnecessary procedures. We believe in honest consultations and treatment plans you can trust.",
+        "We maintain a strict zero-bias policy in our diagnostics. You get honest consultations and evidence-based recommendations you can verify.",
     },
     {
       icon: Sparkles,
-      title: "Premium Aesthetic Standards",
+      title: "Dual-Specialty Standard",
       description:
-        "We merge clinical precision with an aesthetic sensibility — so every smile we craft is as beautiful as it is functional.",
+        "By merging oral surgery with aesthetic sensibility, we ensure that even the most complex functional treatments meet elite cosmetic standards.",
     },
   ];
 
   const detailedHighlights = [
     {
-      title: "Advanced Solutions",
-      description: "Expertise in Dental Implants, Clear Aligners, and full Smile Design transformations.",
+      title: "Aesthetic Excellence",
+      description: "Advanced Clear Aligner therapy and full-arch smile rehabilitations designed for natural outcomes.",
       icon: Sparkles,
     },
     {
-      title: "Digital Facilities",
-      description: "Equipped with state-of-the-art surgical units and digital imaging for precise diagnosis.",
+      title: "Surgical Infrastructure",
+      description: "Equipped with hospital-grade sterilization and specialized surgical units for complex oral procedures.",
       icon: Hospital,
     },
     {
-      title: "Laser Procedures",
-      description: "Modern Single-Sitting RCTs and Laser treatments for a painless, faster recovery.",
+      title: "Laser Therapeutics",
+      description: "Single-sitting RCTs and soft-tissue procedures utilizing laser tech for faster, painless recovery.",
       icon: Activity,
     },
     {
-      title: "Premium Technology",
-      description: "Highest quality Zirconia, Emax, and DMLS technology for durable and natural crowns.",
+      title: "Elite Restorations",
+      description: "High-integrity Zirconia and Emax crowns engineered for durability and perfect shade matching.",
       icon: Microscope,
     },
     {
-      title: "Oral Surgery",
-      description: "Advanced expertise in facial fractures, wisdom tooth extractions, and minor oral surgeries.",
+      title: "Complex Oral Surgery",
+      description: "Specialist management for facial fractures, impacted teeth, and cyst removals under one roof.",
       icon: ShieldCheck,
     },
     {
-      title: "Preventive Care",
-      description: "Comprehensive oral cancer screenings and preventive protocols to keep your smile healthy.",
+      title: "Diagnostic Depth",
+      description: "Comprehensive screening protocols, including oral cancer biopsies and digital diagnostic mapping.",
       icon: CheckCircle2,
     },
   ];
@@ -129,23 +129,18 @@ export default function AboutPage() {
                 <span className="text-primary">Dental Theatre</span>
               </h1>
               <p className="mt-5 max-w-xl text-[15px] leading-7 text-muted-foreground sm:mt-6 sm:max-w-2xl sm:text-lg sm:leading-relaxed sm:mx-auto">
-                More than just a dental clinic — Dental Theatre is a destination
-                for premium, comprehensive oral care in Panipat. We combine
-                advanced surgical expertise with a calm, modern environment so
-                that every visit feels reassuring, not routine.
+                Dental Theatre was established to bring world-class specialist 
+                care to Panipat. We bridge the gap between high-stakes oral 
+                surgery and high-end aesthetics, providing a clinical experience 
+                defined by precision and predictability.
               </p>
               <div className="mt-7 sm:mt-8">
                 <div className="mb-5 h-px w-14 rounded-full bg-primary/30 sm:mx-auto sm:mb-7 sm:w-16" />
                 <p className="max-w-2xl text-sm leading-7 text-muted-foreground sm:text-[15px] sm:leading-relaxed">
-                  Founded by two specialist clinicians with a shared vision,
-                  Dental Theatre was built on the belief that every patient
-                  deserves top-tier, specialized oral care — without having to
-                  travel to a metro city. Together, our founders bring over{" "}
-                  <strong className="text-foreground font-semibold">
-                    19 years of combined expertise
-                  </strong>{" "}
-                  spanning Oral Surgery, Implantology, Orthodontics, Aligners,
-                  and Advanced Aesthetics — all under one roof.
+                  Founded by two veteran clinicians, Dental Theatre operates on 
+                  the principle that every patient deserves specialized expertise 
+                  usually reserved for metro-city hospitals. Together, our founders 
+                  combine over <strong className="text-foreground font-semibold">19 years of surgical and aesthetic depth</strong>, covering everything from complex maxillofacial trauma to advanced smile architecture—all within a single, state-of-the-art facility.
                 </p>
               </div>
             </FadeIn>
@@ -165,7 +160,7 @@ export default function AboutPage() {
                 The Specialists
               </p>
               <h2 className="text-[1.85rem] font-bold tracking-tight md:text-[2.25rem]">
-                Meet Our Doctors
+                Expertise in Depth: Our Specialists
               </h2>
               <p className="mt-4 max-w-xl text-sm text-muted-foreground sm:mx-auto sm:text-base">
                 Two specialists. One shared commitment to clinical excellence
@@ -240,7 +235,7 @@ export default function AboutPage() {
                 Our Impact
               </p>
               <h2 className="text-[1.85rem] font-bold tracking-tight md:text-[2.25rem]">
-                A Legacy of Smiles
+                Clinical Track Record
               </h2>
               <p className="mt-4 max-w-xl text-sm text-muted-foreground sm:mx-auto sm:text-base">
                 Years of dedication to clinical excellence, reflected in the
