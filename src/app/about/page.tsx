@@ -186,6 +186,7 @@ export default function AboutPage() {
                         alt={founder.name} 
                         fill 
                         className={`object-cover ${founder.imagePos} transition-transform duration-500 group-hover:scale-105`}
+                        sizes="(max-width: 1024px) 100vw, 50vw"
                       />
                     </div>
 
@@ -359,7 +360,7 @@ export default function AboutPage() {
           </StaggerContainer>
 
           <FadeIn direction="up" delay={0.4} className="mt-16 text-center">
-            <Link href="/contact">
+            <Link href="/#locations">
               <Button
                 size="lg"
                 variant="secondary"

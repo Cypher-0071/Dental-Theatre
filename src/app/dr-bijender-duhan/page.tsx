@@ -61,6 +61,7 @@ export default function DrBijenderPage() {
                     fill 
                     className="object-cover"
                     priority
+                    sizes="(max-width: 768px) 100vw, 420px"
                   />
                 </div>
               </div>

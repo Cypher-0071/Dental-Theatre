@@ -22,7 +22,7 @@ export function Footer() {
           {/* Logo & About */}
           <div className="flex flex-col gap-5 lg:col-span-3">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/Logo.png" alt="Dental Theatre Logo" width={32} height={32} className="h-9 w-auto object-contain" />
+              <Image src="/Logo.png" alt="Dental Theatre Logo" width={32} height={32} className="h-9 w-auto object-contain" style={{ width: 'auto', height: '2.25rem' }} />
               <span className="text-2xl font-bold tracking-tight text-white">
                 <span className="text-sky-200">Dental</span> Theatre
               </span>
@@ -71,7 +71,7 @@ export function Footer() {
                 { label: "Dr. Bijender Duhan", href: "/dr-bijender-duhan" },
                 { label: "Our Services", href: "/services" },
                 { label: "Smile Gallery", href: "/gallery" },
-                { label: "Contact Us", href: "/contact" },
+                { label: "Contact Us", href: "/#locations" },
               ].map((link) => (
                 <Link
                   key={link.href}

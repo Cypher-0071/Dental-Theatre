@@ -114,6 +114,7 @@ export default function GalleryPage() {
                           alt={image.title}
                           fill
                           className="object-cover transition-transform duration-700 group-hover:scale-110"
+                          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-end p-6">
                           <Maximize2 className="size-6 text-white mb-2" />
@@ -132,6 +133,7 @@ export default function GalleryPage() {
                         fill
                         className="object-contain"
                         priority
+                        sizes="100vw"
                       />
                       <div className="absolute bottom-0 left-0 right-0 px-6 py-8 bg-gradient-to-t from-black/90 via-black/40 to-transparent text-white">
                         <div className="container mx-auto max-w-4xl">

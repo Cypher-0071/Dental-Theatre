@@ -141,6 +141,7 @@ export function LocationsSection({ id }: { id?: string }) {
                             alt="Clinic Interior"
                             fill
                             className="object-cover"
+                            sizes="(max-width: 1024px) 100vw, 50vw"
                           />
                           
 
@@ -214,6 +215,7 @@ export function LocationsSection({ id }: { id?: string }) {
                           alt="Clinic Interior"
                           fill
                           className="object-cover"
+                          sizes="(max-width: 1024px) 100vw, 50vw"
                         />
                         
 
